@@ -56,7 +56,7 @@ autocmd BufEnter *.txt,README,TODO,*.markdown,*.md if &filetype == '' | setlocal
 autocmd FileType txt,tex,mail,asciidoc setlocal textwidth=72 colorcolumn=+1 spell
 
 " Clang Complete plugin:
-let clang_use_library     = 1
+let clang_use_library     = 0
 let clang_complete_auto   = 0
 let clang_complete_macros = 1
 let clang_complete_copen  = 1
@@ -82,6 +82,8 @@ let syntastic_disabled_filetypes = ['c', 'cpp', 'erlang', 'ocaml', 'python', 'te
 				 \  'cuda', 'css', 'html', 'xhtml', 'xml', 'xslt']
 
 match Todo /TODO\|FIXME\|XXX\|FUCKME/
+
+let mapleader = ","
 
 map <F1>  :NERDTreeToggle<Enter>
 map <F2>  :write<Enter>
