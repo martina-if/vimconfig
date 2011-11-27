@@ -48,6 +48,7 @@ set scrolloff=1
 set sidescrolloff=6
 set nospell
 set spelllang=es,en
+set path+=/usr/local/include,**
 set pastetoggle=<F10>
 
 autocmd FileType c,cpp        setlocal foldmethod=syntax foldnestmax=2 cinoptions=(0,h0
@@ -86,27 +87,27 @@ match Todo /TODO\|FIXME\|XXX\|FUCKME/
 
 let mapleader = ","
 
-map <F1>  :NERDTreeToggle<Enter>
-map <F2>  :write<Enter>
-map <F3>  :nohlsearch<Enter>
-map <F4>  :make<Enter>
-map <F5>  :shell<Enter>
-map <F6>  <Leader>c<Space>
-map <F7>  :TagbarToggle<Enter>
-map <F8>  :vimgrep /TODO\\|FIXME\\|XXX\\|FUCKME/ %<Enter>:copen<Enter>
-map <F9>  :checktime<Enter>
-map <F11> :w!<Enter>:!aspell check %<Enter>:w %<Enter>
-map <F12> :SpellThis<Enter>
+map <silent> <F1>  :NERDTreeToggle<Enter>
+map <silent> <F2>  :write<Enter>
+map <silent> <F3>  :nohlsearch<Enter>
+map <silent> <F4>  :make<Enter>
+map <silent> <F5>  :shell<Enter>
+map <silent> <F6>  <Leader>c<Space>
+map <silent> <F7>  :TagbarToggle<Enter>
+map <silent> <F8>  :vimgrep /TODO\\|FIXME\\|XXX\\|FUCKME/ %<Enter>:copen<Enter>
+map <silent> <F9>  :checktime<Enter>
+map <silent> <F11> :w!<Enter>:!aspell check %<Enter>:w %<Enter>
+map <silent> <F12> :SpellThis<Enter>
 
 " Corrects current word spelling with the first suggestion
-map <Leader>s 1z=
+map <silent> <Leader>s 1z=
 " Formats current paragraph
-map <Leader>p gwap
+map <silent> <Leader>p gwap
 
 " Use Tabular plugin to align variable assignments
-map <Leader>t=       :Tabularize /^[^=]*\zs=<Enter>
+map <silent> <Leader>t=       :Tabularize /^[^=]*\zs=<Enter>
 " Use Tabular plugin to align variable declarations
-map <Leader>t<Space> :Tabularize /^\s*\S*\zs\(\s\*\\|\s&\\|\s\)/l0r0<Enter>
+map <silent> <Leader>t<Space> :Tabularize /^\s*\S*\zs\(\s\*\\|\s&\\|\s\)/l0r0<Enter>
 
 " Adds spaces around current block of lines
 map <silent> <Leader><Space> :call <SID>AddSpaces()<Enter>
@@ -166,5 +167,22 @@ function s:DeleteLines(fromline, toline, ...)
 	silent execute a:fromline . ',' . toline . 'delete'
 	if a:0 == 0 || a:0 == 1 && a:1
 		normal ``
+	endif
+endfunction
+
+function s:ToggleAutoHighlight()
+	if exists('#auto_highlight')
+		autocmd! auto_highlight
+		augroup! auto_highlight
+		augroup END
+		set updatetime&
+		return 0
+	else
+		augroup auto_highlight
+			autocmd!
+			autocmd CursorHold * let @/ = '\V\<' . escape(expand('<cword>'), '\') . '\>'
+		augroup END
+		set updatetime=500
+		return 1
 	endif
 endfunction
