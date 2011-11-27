@@ -19,11 +19,11 @@ if has('gui_running')
 	else
 		colorscheme peaksea
 	endif
+elseif $TERM =~ 'rxvt-unicode' || $TERM =~ 'xterm-color'
+	colorscheme miromiro
 elseif $TERM =~ 'xterm'
 	set t_Co=256
 	colorscheme zenburn
-elseif $TERM =~ 'rxvt-unicode'
-	colorscheme miromiro
 endif
 
 set nocompatible
