@@ -25,7 +25,7 @@ elseif $TERM =~ 'xterm'
 	set t_Co=256
 	colorscheme zenburn
 endif
-colorscheme zenburn
+colorscheme riri
 
 set nocompatible
 set history=100
