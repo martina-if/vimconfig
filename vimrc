@@ -38,6 +38,7 @@ set ruler
 set showmatch
 set hlsearch
 set autoindent
+set ignorecase
 set incsearch
 set nowrap
 set list
