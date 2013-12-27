@@ -20,26 +20,27 @@ if has('gui_running')
 		colorscheme peaksea
 	endif
 elseif $TERM =~ 'rxvt-unicode' || $TERM =~ 'xterm-color'
-	colorscheme miromiro
+	set t_Co=256
+	"colorscheme macvim
+	colorscheme peaksea
 elseif $TERM =~ 'xterm'
 	set t_Co=256
 	colorscheme zenburn
 endif
-colorscheme riri
 
 set nocompatible
 set history=100
 set title
 set nobackup
 set backspace=indent,eol,start
-set nonumber
+set number
 set ruler
 set showmatch
 set hlsearch
 set autoindent
 set incsearch
 set nowrap
-set nolist
+set list
 set listchars=tab:\|\ ,trail:·,precedes:<,extends:>
 set nofoldenable
 set foldnestmax=1
@@ -51,6 +52,10 @@ set nospell
 set spelllang=es,en
 set path+=/usr/local/include,**
 set pastetoggle=<F10>
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set incsearch
 
 autocmd FileType c,cpp        setlocal foldmethod=syntax foldnestmax=2 cinoptions=(0,h0
 autocmd FileType erlang,ocaml setlocal expandtab tabstop=4 shiftwidth=4
