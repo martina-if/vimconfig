@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/miglesias/vts/vts/vts-server/src/test/resources/com/vts/mockdevices/ais'
-let g:netrw_dirhist_2='/tmp/mongb/mongodb-slot4'
-let g:netrw_dirhist_3='/tmp/mongb/mongodb-slot5'
-let g:netrw_dirhist_4='/home/miglesias/vts/vts/vts-server/src/test/resources/com/vts/mockdevices/ais'
-let g:netrw_dirhist_5='/etc/NetworkManager'
-let g:netrw_dirhist_6='/home/miglesias/cluster_triniti/gitolite-admin-vts/conf'
-let g:netrw_dirhist_7='/home/miglesias/vts/basic_spring_project/src/com/example'
-let g:netrw_dirhist_8='/home/miglesias'
-let g:netrw_dirhist_9='/home/miglesias/.mcabber'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/martina/spotify/dns-data/include/spotify.net'
+let g:netrw_dirhist_2='/home/martina/spotify/spotify-puppet/modules/artist'
+let g:netrw_dirhist_3='/home/martina/spotify/dns-data/include/ash2.spotify.net'
+let g:netrw_dirhist_4='/home/martina/.dotfiles/scripts'
