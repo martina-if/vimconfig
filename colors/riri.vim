@@ -19,8 +19,8 @@ hi NonText      ctermfg=blue
 hi LineNr       ctermfg=darkblue
 hi StatusLine   ctermfg=white    ctermbg=125 cterm=bold
 hi StatusLineNC ctermfg=white    ctermbg=125 cterm=reverse
-hi Visual       ctermfg=white    ctermbg=93
-hi Search       ctermfg=white    ctermbg=162
+hi Visual       ctermfg=NONE     ctermbg=165 cterm=reverse
+hi Search       ctermfg=NONE     ctermbg=165 cterm=reverse
 hi ColorColumn  ctermbg=195
 hi CursorLine   ctermbg=253                  cterm=NONE
 
@@ -30,7 +30,7 @@ hi Number       ctermfg=27
 hi Constant     ctermfg=163
 hi Statement    ctermfg=16       cterm=bold
 hi PreProc      ctermfg=blue
-hi Type         ctermfg=28       cterm=bold
+hi Type         ctermfg=darkblue cterm=bold
 hi StorageClass ctermfg=red
 hi Special      ctermfg=darkcyan
 hi Function     ctermfg=red
