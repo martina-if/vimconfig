@@ -96,10 +96,10 @@ match Todo /TODO\|FIXME\|XXX\|FUCKME/
 let mapleader = ","
 
 map <silent> <F1>  :NERDTreeToggle<Enter>
-map <silent> <F2>  :write<Enter>
+map <silent> <F2>  :shell<Enter>
 map <silent> <F3>  :nohlsearch<Enter>
 map <silent> <F4>  :make<Enter>
-map <silent> <F5>  :shell<Enter>
+map <silent> <F5>  :write<Enter>
 map <silent> <F6>  <Leader>c<Space>
 map <silent> <F7>  :TagbarToggle<Enter>
 map <silent> <F8>  :vimgrep /TODO\\|FIXME\\|XXX\\|FUCKME/ %<Enter>:copen<Enter>
