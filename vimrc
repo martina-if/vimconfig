@@ -60,10 +60,12 @@ set incsearch
 set laststatus=2
 set mouse=a
 
+autocmd BufEnter *.txt,README,TODO,*.markdown,*.md if &filetype == '' | setlocal filetype=txt | endif
+autocmd BufEnter *.asciidoc   setlocal filetype=asciidoc
+
 autocmd FileType c,cpp        setlocal foldmethod=syntax foldnestmax=2 cinoptions=(0,h0
 autocmd FileType erlang,ocaml setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType python       setlocal foldmethod=indent
-autocmd BufEnter *.txt,README,TODO,*.markdown,*.md if &filetype == '' | setlocal filetype=txt | endif
 autocmd FileType txt,tex,mail,asciidoc setlocal textwidth=80 colorcolumn=+1 spell
 
 " Clang Complete plugin:
